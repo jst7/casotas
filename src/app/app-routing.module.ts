@@ -1,4 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './folder/home/home.component';
 import { LoginComponent } from './folder/login/login.component';
@@ -20,8 +22,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
+  declarations: [HomeComponent, LoginComponent],
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules }),
+    CommonModule,
   ],
   exports: [RouterModule],
 })

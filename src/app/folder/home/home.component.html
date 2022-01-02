@@ -14,7 +14,24 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong class="capitalize">HOME WORKS</strong>
-  </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" *ngFor="let add of addsService.adds; index as position">
+
+          <ion-card>
+            <img src="{{add.img}}" />
+            <ion-card-header>
+              <ion-card-subtitle>{{add.tag}}</ion-card-subtitle>
+              <ion-card-title>{{add.name}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              {{add.description}}
+            </ion-card-content>
+          </ion-card>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
 </ion-content>
